@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Menu Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: #555;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .navbar.scrolled {
+            background-color: #222;
+        }
+
+        .navbar a.active {
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 20px;
+            margin-top: 60px;
+        }
+
+        #home {
+            background-color: #f4f4f4;
+        }
+
+        #about {
+            background-color: #eaeaea;
+        }
+
+        #services {
+            background-color: #dcdcdc;
+        }
+
+        #contact {
+            background-color: #cccccc;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <div class="navbar" id="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Sections -->
+    <section id="home">
+        <h1>Welcome to Home</h1>
+        <p>This is the home section where you can find the latest updates and highlights.</p>
+    </section>
+
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Learn more about our mission, vision, and the team behind our success.</p>
+    </section>
+
+    <section id="services">
+        <h1>Our Services</h1>
+        <p>Explore the wide range of services we offer to meet your needs.</p>
+    </section>
+
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>Get in touch with us for any inquiries or support.</p>
+    </section>
+
+    <script>
+        // Change navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Highlight active menu item on click
+        const links = document.querySelectorAll('.navbar a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                links.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

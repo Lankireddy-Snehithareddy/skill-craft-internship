@@ -1,0 +1,205 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+  }
+  
+  header {
+    background: #333;
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  #navbar .logo h1 {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  
+  #navbar .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+  }
+  
+  #navbar .nav-links li {
+    margin: 0 15px;
+  }
+  
+  #navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  #navbar .nav-links a:hover {
+    color: #ff4081;
+  }
+  
+  .menu-icon {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding-top: 60px; /* Offset for fixed navbar */
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .cta-btn {
+    background-color: #ff4081;
+    padding: 12px 30px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-btn:hover {
+    background-color: #e1006e;
+  }
+  
+  /* Features Section */
+  #features {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  #features h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  
+  .card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* About Section */
+  #about {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+  }
+  
+  #about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #about p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Section */
+  #contact {
+    padding: 50px 20px;
+    background: #f4f4f4;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  #contact p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #navbar .nav-links {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      padding: 20px;
+    }
+  
+    #navbar .nav-links li {
+      margin: 10px 0;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .nav-links.show {
+      display: flex;
+    }
+  
+    .feature-cards {
+      grid-template-columns: 1fr;
+    }
+  }
+  
